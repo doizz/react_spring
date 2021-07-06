@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Document</title> 
+</head>
+
+<body>
+<script>
+//concat, filter, map, slice, 스프레드(전개) 연산자
+console.log("1.===================== 스프레드 연산자");
+const a =[1,2,3];
+const b = [...a];
+
+b.push(4);
+console.log(` a의 값은 : ${a}`);
+console.log(` b의 값은 : ${b}`);
+
+console.log("2.===================== 추가하기");//값을 추가할때 사용
+const a2=[1,2,3];
+const b2=a2.concat(4);
+console.log(` a의 값은 : ${a2}`); //1,2,3
+console.log(` b의 값은 : ${b2}`); //1,2,3,4
+const c2 = [0,...a2,4];
+console.log(` c의 값은 : ${c2}`); //1,2,3,4
+
+
+console.log("3.===================== 걸러내기");//보통 값을 삭제할때 사용
+const a3 = [1,2,3];
+const b3 = a3.filter((n)=>{return n != 1;});// bool을 return 받는다. ->ture만 걸러낸다.
+console.log(b3);
+
+console.log("3.===================== 잘라내기");
+const a4 = [1,2,3];
+const b4 = a4.slice(0,2);
+console.log(`b4의 값은 : ${b4}`);
+const c4 = [...a4.slice(0,2),4,...a4.slice(2,3)];
+console.log(`c4의 값은 : ${c4}`);
+
+console.log("3.===================== 반복하기");
+ const a5=[1,2,3];
+// for(let i=0 ;  i<a5.length ; i++){
+//     console.log(a5[i]);
+// }
+// a5.forEach((n) => {console.log(n)});
+const b5 = a5.map((m)=>m);
+console.log(b5)
+
+const data={phone:"22222"};
+const a6 = {id:1, name:"홍길동",phone:"1111", age:17 , gender:"남"};
+const b6 = {...a6, ...data};
+console.log(b6);
+
+const users =[
+    {id: 1,name:"구태모",phone:"2222"},
+    {id: 2,name:"이대엽",phone:"3333"},
+    {id: 3,name:"오승훈",phone:"4444"}
+]
+
+const updateUserDto={
+    id:2,name:"홍길동"
+};
+
+const newUser = users.map( u => u );
+
+console.log(newUser);
+
+//users[1].name=updateUserDto.name;
+ 
+console.log(users);
+
+</script>
+
+</body>
+</html>

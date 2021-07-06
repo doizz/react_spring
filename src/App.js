@@ -27,6 +27,10 @@ const mystlye={
 
 function App() {
   let c;
+  function add(){
+    
+  }
+
   return( 
   <div>
     <div style={mystlye}>안녕{a === 10  ? "10입니다." : '10이아닙니당.'}</div>
